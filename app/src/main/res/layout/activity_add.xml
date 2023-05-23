@@ -21,7 +21,8 @@
             android:id="@+id/title_new_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="add value"
+            android:textSize="24sp" />
 
         <EditText
             android:id="@+id/name_new_add"
