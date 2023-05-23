@@ -23,6 +23,8 @@ class Mod_Activity:AppCompatActivity() {
             val id=data.getString("idKey")
             binding.lastId.setText(id.toString())
             binding.deleteId.setText(id.toString())
+            binding.lastId.setEnabled(false)
+            binding.deleteId.setEnabled(false)
         }
         binding.updateButton.setOnClickListener{
 
