@@ -29,4 +29,3 @@ class CustomAdapter(private val data:Array<String>) :RecyclerView.Adapter<Custom
 
 }
 
-}
