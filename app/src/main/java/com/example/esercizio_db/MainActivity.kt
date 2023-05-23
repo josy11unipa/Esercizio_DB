@@ -49,9 +49,12 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, Activity2::class.java)
                 setResult(Activity.RESULT_OK, intent)
                 startActivity(intent)
-
             }
-
+            R.id.removeB ->{
+                val intent = Intent(this, Mod_Activity::class.java)
+                setResult(Activity.RESULT_OK, intent)
+                startActivity(intent)
+            }
         }
         return super.onOptionsItemSelected(item)
     }
