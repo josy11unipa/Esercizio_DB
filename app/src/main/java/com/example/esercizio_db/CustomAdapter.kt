@@ -1,6 +1,7 @@
 package com.example.esercizio_db
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.database.Cursor
 import android.view.LayoutInflater
 import android.view.View
@@ -32,6 +33,12 @@ class CustomAdapter(private val cursor:Cursor) :RecyclerView.Adapter<CustomAdapt
             holder.textID.text=cursor.getLong(cursor.getColumnIndex(DbHelper.ID)).toString()
             holder.textName.text=cursor.getString(cursor.getColumnIndex(DbHelper.SUBJECT))
             holder.textDesc.text=cursor.getString(cursor.getColumnIndex(DbHelper.DESC))
+            holder.itemView.setOnClickListener{
+                val intent= Intent(holder.itemView.context,Mod_Activity::class.java)
+                intent.putExtra("idKey",holder.textID.text.toString())
+                holder.itemView.context.startActivity(intent)
+
+            }
 
         }
     }

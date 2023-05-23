@@ -17,6 +17,13 @@ class Mod_Activity:AppCompatActivity() {
         setContentView(binding.root)
         dbManager= DBManager(this)
         dbManager.open()
+
+        val data=intent.extras
+        if(data!=null){
+            val id=data.getString("idKey")
+            binding.lastId.setText(id.toString())
+            binding.deleteId.setText(id.toString())
+        }
         binding.updateButton.setOnClickListener{
 
             try {
