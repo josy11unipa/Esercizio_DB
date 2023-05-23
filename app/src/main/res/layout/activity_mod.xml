@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="id"
-                android:inputType="text" />
+                android:inputType="number" />
 
             <EditText
                 android:id="@+id/newName"
@@ -77,7 +77,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="id"
-                android:inputType="text" />
+                android:inputType="number" />
 
             <Button
                 android:id="@+id/deleteB"

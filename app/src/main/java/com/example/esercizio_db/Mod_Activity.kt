@@ -18,14 +18,19 @@ class Mod_Activity:AppCompatActivity() {
         dbManager= DBManager(this)
         dbManager.open()
         binding.updateButton.setOnClickListener{
-            val lastId=binding.lastId.text.toString().toLong()
-            val newName=binding.newName.text.toString()
-            val newDesc=binding.NewDesc.text.toString()
-            dbManager.update(lastId,newName,newDesc)
-            val intent=Intent(this,MainActivity::class.java)
-            intent.flags=Intent.FLAG_ACTIVITY_CLEAR_TOP
-            setResult(Activity.RESULT_OK,intent)
-            startActivity(intent)
+
+            try {
+                val lastId = binding.lastId.text.toString().toLong()
+                val newName = binding.newName.text.toString()
+                val newDesc = binding.NewDesc.text.toString()
+                dbManager.update(lastId, newName, newDesc)
+                val intent = Intent(this, MainActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+                setResult(Activity.RESULT_OK, intent)
+                startActivity(intent)
+            }catch (e:NumberFormatException){
+                Toast.makeText(this,"devi inserire un intero",Toast.LENGTH_SHORT).show()
+            }
 
         }
         binding.deleteB.setOnClickListener{
