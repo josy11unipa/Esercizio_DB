@@ -31,8 +31,6 @@ class MainActivity : AppCompatActivity() {
         } else {
             Toast.makeText(this, "il database è vuoto", Toast.LENGTH_SHORT).show()
         }
-
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -58,5 +56,4 @@ class MainActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
-
 }
