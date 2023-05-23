@@ -38,10 +38,11 @@ class DBManager(val context: Context) {
         val n = db.update(DbHelper.TABLE_NAME, values, selection, selectionArgs)
         return n
     }
-    fun delete(id: Long){
+    fun delete(id: Long):Int{
         val selection = "${DbHelper.ID} = ? "
         val selectionArgs = arrayOf(id.toString())
-        db.delete(DbHelper.TABLE_NAME, selection, selectionArgs)
+        val n= db.delete(DbHelper.TABLE_NAME, selection, selectionArgs)
+        return n
     }
 
     fun fetchAll(): Cursor{
